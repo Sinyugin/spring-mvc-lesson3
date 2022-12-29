@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -21,9 +22,14 @@ public class ProductController {
     @GetMapping("/getAllProduct")
     public String getAllProduct(Model model) {
         List<Product> products = productRepository.getAll();
-//        model.addAttribute("products", product);
+        model.addAttribute("products", products);
+        System.out.println(products.toString());
         return "getAllProducts";
     }
 
+    @GetMapping("/add_product")
+    public String add_product(){
+        return "add_product_form";
+    }
 
 }

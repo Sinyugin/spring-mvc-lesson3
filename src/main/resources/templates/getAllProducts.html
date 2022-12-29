@@ -13,7 +13,8 @@
     <th:block th:each="p : ${products}">
         <tr>
             <td th:text="${p.getId()}">...</td>
-            <td th:text="${p.getName()}">...</td>
+            <td th:text="${p.getTitle()}">...</td>
+            <td th:text="${p.getCost()}">...</td>
         </tr>
     </th:block>
 </table>
